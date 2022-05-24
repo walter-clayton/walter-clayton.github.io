@@ -7,7 +7,6 @@ class App{
 		document.body.appendChild( container );
     
         this.camera = new THREE.PerspectiveCamera (60, window.innerWidth, window.innerHeight, 0.1, 100);
-		
         this.camera.position.set(0, 0, 4);
 
 		this.scene = new THREE.Scene();
@@ -25,14 +24,15 @@ class App{
 		this.renderer.setSize( window.innerWidth, window.innerHeight);
 		container.appendChild( this.renderer.domElement);
 
-		this.renderer.setAnimationLoop( this.render.bind(this));
-
+		
 		const geometry = new THREE.BoxBufferGeometry();
-		const material = new THREE.MeshStandardMaterial( { color: 0xff0000 });
+		const material = new THREE.MeshStandardMaterial( { color: 0xFF0000 });
 		
 		this.mesh = new THREE.Mesh( geometry, material);
 
 		this.scene.add( this.mesh );
+
+		this.renderer.setAnimationLoop( this.render.bind(this));
 
 		window.addEventListener('resize', this.resize.bind(this) );
 	}	
