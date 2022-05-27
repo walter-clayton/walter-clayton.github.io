@@ -6,7 +6,7 @@ class App{
 		const container = document.createElement( 'div' );
 		document.body.appendChild( container );
     
-        this.camera = new THREE.PerspectiveCamera (60, window.innerWidth, window.innerHeight, 0.1, 100);
+        this.camera = new THREE.PerspectiveCamera (60, window.innerWidth / window.innerHeight, 0.1, 100);
         this.camera.position.set(0, 0, 4);
 
 		this.scene = new THREE.Scene();
@@ -19,7 +19,7 @@ class App{
 		light.position.set( 0.2, 1, 1 );
 		this.scene.add(light);
 
-		this.renderer = new THREE.WebGLRenderer ({ antialias: true, alpha: true});
+		this.renderer = new THREE.WebGLRenderer ({ antialias: true});
 		this.renderer.setPixelRatio( window.devicePixelRatio );
 		this.renderer.setSize( window.innerWidth, window.innerHeight);
 		container.appendChild( this.renderer.domElement);
