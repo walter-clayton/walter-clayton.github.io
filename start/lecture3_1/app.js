@@ -52,7 +52,11 @@ class App{
     }
     
     initScene(){
-        
+        this.radius = 0.08;
+        this.room = new THREE.LineSegments(
+            new BoxLineGeometry(6,6,6,10,10,10),
+            new THREE
+        ) 
     }
     
     setupXR(){
